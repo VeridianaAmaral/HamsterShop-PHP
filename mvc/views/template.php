@@ -66,7 +66,10 @@
       <a class="text-reset me-3" href="#">
         <i class="bi bi-file-earmark-code-fill"></i>
       </a>
-
+      <?php
+            $pathDeslogar = APP . 'usuario/deslogar';
+            echo (isset($_SESSION['logado']) ? "<a class='nav-link active' href='$pathDeslogar'>Deslogar</a>" : "");
+            ?>
     </div>
     <!-- Right elements -->
   </div>
