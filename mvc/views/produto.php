@@ -19,8 +19,8 @@
                 <?php endforeach; ?>
       </select>
     </div>
-      <label for="inputDescricaol4">Descricao</label>
-      <input type="text" class="form-control" id="inputDescricaol4" placeholder="Descricao" name = "descricao">
+      <label for="inputDescricaol4">Nome do Produto</label>
+      <input type="text" class="form-control" id="inputDescricaol4" placeholder="Nome do produto" name = "descricao">
     </div>
     <div class="form-group col-md-6">
       <label for="inputPreco4">Preco</label>
