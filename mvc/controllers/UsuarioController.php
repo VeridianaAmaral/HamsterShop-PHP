@@ -15,7 +15,7 @@ class UsuarioController extends Controller{
 
         $usuario = new Usuario();
         $usuario->logar($user);
-        $this->redirect('/');
+        $this->redirect('');
 
     }
 
@@ -40,7 +40,7 @@ class UsuarioController extends Controller{
 
     function deslogar(){
         session_destroy();
-        $this->redirect("/");
+        $this->redirect("");
       }
 
     function admin(){
