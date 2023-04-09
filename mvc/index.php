@@ -9,21 +9,7 @@
 
   $rotasPermitidas = array('usuario/login', 'usuario/entrar', 'usuario/cadastrar', 'usuario/salvar');
 
-if (isset($_GET['url']) && isset($_SESSION['logado']) && !in_array($_GET['url'], $rotasPermitidas)) {
-    $url = $_GET['url'];
-} else {
-    if (isset($_GET['url']) && in_array($_GET['url'], $rotasPermitidas)) {
-        $url = $_GET['url'];
-    } else if (isset($_SESSION['logado'])) {
-      if ($_SESSION['tipo']) {
-        $url = 'estoque/cadastrar';
-      }else{
-        $url= 'index/index';
-      }
-    } else {
-        $url = 'usuario/login';
-    }
-}
+$url = isset($_GET['url']) ? $_GET['url'] : 'index/index';
 
   $parametros = explode("/", $url);
   $nomeControlador = ucfirst($parametros[0]).'Controller';
