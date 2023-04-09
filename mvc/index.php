@@ -7,42 +7,22 @@
   error_reporting(E_ALL);
   define("APP", "http://localhost/mvc/");
 
-  if (isset($_GET['url'])) {
-    var_dump("if 1");
-    if(isset($_SESSION['logado'])){
-      var_dump("if 2");
-      if($_GET['url'] != 'usuario/login'){
-        var_dump("if 3");
-      }
-    }
-  }else if (isset($_GET['url'])) {
-    var_dump("if 4");
-    if ( $_GET['url'] == 'usuario/entrar') {
-      var_dump("if 5");
-    }
-  }{
+  $rotasPermitidas = array('usuario/login', 'usuario/entrar', 'usuario/cadastrar', 'usuario/salvar');
 
-  }
-
-  if (isset($_GET['url']) && isset($_SESSION['logado']) && $_GET['url'] != 'usuario/login') {
-   $url = $_GET['url'];
-    var_dump($url , "if 1");
-   }else {
-    if(isset($_GET['url']) && $_GET['url'] == 'usuario/entrar' || $_GET['url'] == 'usuario/cadastar' || $_GET['url'] == 'usuario/salvar' ){
+if (isset($_GET['url']) && isset($_SESSION['logado']) && !in_array($_GET['url'], $rotasPermitidas)) {
     $url = $_GET['url'];
-    var_dump($url , "if 2");
-  } else if(isset($_SESSION['logado'])){
-    var_dump($url + "if 3");
-    if ($_SESSION['tipo']) {
-      $url = 'estoque/cadastrar';
-    }else{
-      $url= 'produto/listar';
-    }    
-  }
-    else {
-    var_dump($_GET['url'] , "else final");
-    $url = 'usuario/login';
-  }
+} else {
+    if (isset($_GET['url']) && in_array($_GET['url'], $rotasPermitidas)) {
+        $url = $_GET['url'];
+    } else if (isset($_SESSION['logado'])) {
+      if ($_SESSION['tipo']) {
+        $url = 'estoque/cadastrar';
+      }else{
+        $url= 'index/index';
+      }
+    } else {
+        $url = 'usuario/login';
+    }
 }
 
   $parametros = explode("/", $url);
