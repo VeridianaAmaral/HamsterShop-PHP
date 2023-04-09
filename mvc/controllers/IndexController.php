@@ -2,9 +2,12 @@
   class IndexController extends Controller {
    
     function index() { 
-     
-      $dados = array();
-      $this->view('index', $dados);
+
+      $prod = new Produto();
+      $produtos = $prod->read(); 
+
+      $this->view('index', compact('produtos'));
+
     }
    
   }

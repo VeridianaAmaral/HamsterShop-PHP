@@ -21,6 +21,23 @@
 
     }
 
+    function listar(){
+
+         if (!$_SESSION['tipo']) {
+            $this->redirect('index/index');
+        }
+
+        $estoque = new Estoque();
+        $estoques = $estoque->read();
+        $this->view('estoque' ,compact('estoques'));
+    }
+
+    function deletar(){
+    }
+
+    function update(){
+    }
+
 }
 
 ?>

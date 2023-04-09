@@ -8,7 +8,7 @@
         function logar($user){
             $username = $user['email'];
             $password = $user['senha'];
-            $sql = "SELECT * FROM $this->tabela WHERE username = :username and password = :password";
+            $sql = "SELECT * FROM $this->tabela WHERE email = :username and senha = :password";
             $sentenca = $this->conexao->prepare($sql);
             $sentenca->bindParam(":username", $username);
             $prepared_password = base64_encode($password);

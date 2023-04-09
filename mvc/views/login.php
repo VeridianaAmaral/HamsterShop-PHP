@@ -1,7 +1,7 @@
 <div class='row'>
   <form action="<?php echo APP . 'usuario/entrar'; ?>" method="post" name="login" id="login">
     <div class="col-md-3 mb-1">
-      <label for="email" class="form-label">Username</label>
+      <label for="email" class="form-label">email</label>
       <input class='form-control' type="email" name="email" value="">
     </div>
     <div class="col-md-3 mb-1">
