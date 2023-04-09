@@ -35,8 +35,8 @@
 
     <!-- Collapsible wrapper -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <!-- Navbar brand -->
-      <a class="navbar-brand mt-2 mt-lg-0" href="#">
+      <!-- Navbar brand --> 
+      <a class="navbar-brand mt-2 mt-lg-0" href="<?php echo APP; ?>">
         <img
           src="./../../assets/BlackWhiteHamster.svg"                       
           alt="Hamster Logo"
@@ -48,11 +48,11 @@
       <!-- Left links -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="#">Home</a>
+          <a class="nav-link" href="<?php echo APP; ?>">Home</a>
         </li>
         <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
+          Lista de Produtos
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">Action</a>
@@ -62,12 +62,12 @@
         </div>
       </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Projects</a>
+          <a class="nav-link" href="">Roedores</a>
         </li>
       </ul>
       <!-- Left links -->
     </div>
-    <!-- Collapsible wrapper -->
+    <!-- Collapsible wrapper -->    
 
     <!-- Right elements -->
     <div class="d-flex align-items-center">
@@ -75,18 +75,21 @@
       <a class="text-reset me-3" href="#">
         <i class="bi bi-file-earmark-code-fill"></i>
       </a>
-      <?php
+      <?php       
             $pathDeslogar = APP . 'usuario/deslogar';
-            echo (isset($_SESSION['logado']) ? "<a class='nav-link active' href='$pathDeslogar'>Deslogar</a>" : "");
+            $pathLogar = APP . 'usuario/login';            
+            echo (isset($_SESSION['logado']) ? "<a class='nav-link active' href='$pathDeslogar'>Usuário: {$_SESSION['username']} | Deslogar</a>" : "<a class='nav-link active' href='$pathLogar'>Logar</a>");         
             ?>
     </div>
+   
+
     <!-- Right elements -->
   </div>
   <!-- Container wrapper -->
 </nav>
 <!-- Navbar -->
 <main class="container">
-    <div class="p-5 border border-primary corzinha" id="border-main">
+    <div class="p-5" id="border-main">
       <?php
       require_once $arquivo;
       ?>
