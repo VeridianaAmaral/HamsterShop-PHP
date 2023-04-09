@@ -3,20 +3,26 @@
 class UsuarioController extends Controller{
 
     function login(){
+        unset($_SESSION['message']);
         $dados = array();
         $this->view('login', $dados);    
         //verifica se é admin ou cliente
     }
 
-    function entrar(){
+    function entrar(){        
         $user = array();
         $user['email'] = $_POST['email'];
         $user['senha'] = $_POST['senha'];
 
         $usuario = new Usuario();
         $usuario->logar($user);
-        $this->redirect('/');
-
+        
+       
+        if(isset($_SESSION['logado'])) {                 
+            $this-> view('index', $user); 
+        }   
+        
+        $this-> view('login', $user);
     }
 
     function cadastrar(){
@@ -35,12 +41,11 @@ class UsuarioController extends Controller{
         $usuario = new Usuario();
         $usuario->create($user);
         $this->redirect('usuario/login');
-
     }
 
     function deslogar(){
         session_destroy();
-        $this->redirect("/");
+        $this->redirect("");
       }
 
     function admin(){

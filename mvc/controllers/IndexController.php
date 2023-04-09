@@ -5,9 +5,8 @@
 
       $prod = new Produto();
       $produtos = $prod->read(); 
-
-      $this->view('index', compact('produtos'));
-
+        
+      $this-> view('index2', compact('produtos'));
     }
    
   }
