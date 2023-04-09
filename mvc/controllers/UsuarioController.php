@@ -15,6 +15,7 @@ class UsuarioController extends Controller{
 
         $usuario = new Usuario();
         $usuario->logar($user);
+        $this->redirect('/');
 
     }
 
@@ -36,6 +37,11 @@ class UsuarioController extends Controller{
         $this->redirect('usuario/login');
 
     }
+
+    function deslogar(){
+        session_destroy();
+        $this->redirect("/");
+      }
 
     function admin(){
         //na hora de logar redireciona para estoque(dentro de estoque faz o redirecionamento para cadastro de categoria e produto)
