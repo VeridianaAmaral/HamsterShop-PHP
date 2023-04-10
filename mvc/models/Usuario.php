@@ -21,7 +21,7 @@
               $_SESSION['name'] = $dados['nome'];
               $_SESSION['id'] = $dados['id'];
               $_SESSION['logado'] = true;
-              $_SESSION['tipo'] = $dados['tipo'];
+              $_SESSION['flg_admin'] = $dados['flg_admin'];
             }
             else {
               $_SESSION['username'] = "";

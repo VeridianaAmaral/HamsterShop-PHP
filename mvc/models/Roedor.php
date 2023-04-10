@@ -5,5 +5,7 @@
         protected $tabela = "roedor";
         protected $query = "";
 
+        
+
     }
 ?>

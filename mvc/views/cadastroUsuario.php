@@ -22,13 +22,13 @@
       <legend class="col-form-label col-sm-2 pt-0">Tipo de Usuario</legend>
       <div class="col-sm-10">
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="tipo" id="gridRadios1" value="1" checked>
+          <input class="form-check-input" type="radio" name="flg_admin" id="gridRadios1" value="1" checked>
           <label class="form-check-label" for="gridRadios1">
             Administrador
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="tipo" id="gridRadios2" value="0">
+          <input class="form-check-input" type="radio" name="flg_admin" id="gridRadios2" value="0">
           <label class="form-check-label" for="gridRadios2">
             Comum
           </label>

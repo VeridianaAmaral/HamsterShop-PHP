@@ -23,7 +23,7 @@ create table produto(
 	descricao varchar(100) not null,
 	preco numeric(10,2) not null,
 	roedor_id int references roedor(id),
-	FOREIGN key (categoria_id) REFERENCES categoria_produto(id)
+	FOREIGN key (categoria_id) REFERENCES categoria(id)
 );
 
 create table estoque(
@@ -39,8 +39,6 @@ create table ordem_compra(
 	produto_id int references produto(id)
 );
 
-select * from estoque
-
-select prod.descricao as nomeProduto, prod.preco as preco, categ.nome as nomeCateg
-from  produto prod join categoria_produto categ
-    on categ.id = prod.tipo
+insert into roedor (especie) values ('coelho');
+insert into roedor (especie) values ('hamster');
+insert into roedor (especie) values ('rato');

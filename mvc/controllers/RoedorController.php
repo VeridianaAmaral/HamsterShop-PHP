@@ -1,13 +1,11 @@
 <?php
 
-    class RoedorController extends Controller{
-         
-        function cadastrar(){
-
-            $dados = array();
-            $this -> view('roedor', $dados);
-
-        }
+    class RoedorController extends Controller {
+        
+    function cadastrar(){
+        $dados = array();
+        $this -> view('roedor', $dados);
+    }
 
     function salvar(){
         $roedor = array();
@@ -16,9 +14,7 @@
         $roedores = new Roedor();
         $roedores->create($roedor);
         $this->redirect('roedor/listar');
-
-    }
-
+    }  
 }
 
 ?>
