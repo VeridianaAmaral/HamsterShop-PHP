@@ -10,7 +10,7 @@
       <label for="inputState">State</label>
       <select name = "produto_id" id="inputState" class="form-control">
       <?php foreach ($produtos as $prod): ?>
-                  <option name= "produto_id" value='<?= $prod['id'] ?>'><?= $prod['id'] ?> - <?= $prod['descricao'] ?>
+                  <option name= "produto_id" value='<?= $prod['id'] ?>'><?= $prod['id'] ?> - <?= $prod['nomeproduto'] ?>
                   </option>
                 <?php endforeach; ?>
       </select>
