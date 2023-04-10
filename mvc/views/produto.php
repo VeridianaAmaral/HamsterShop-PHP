@@ -12,9 +12,9 @@
     </div>
     <div class="form-group col-md-4">
       <label for="inputState">State</label>
-      <select name = "tipo" id="inputState" class="form-control">
+      <select name = "categoria_id" id="inputState" class="form-control">
       <?php foreach ($categorias as $categ): ?>
-                  <option name= "tipo" value='<?= $categ['id'] ?>'><?= $categ['id'] ?> - <?= $categ['nome'] ?>
+                  <option name= "categoria_id" value='<?= $categ['id'] ?>'><?= $categ['id'] ?> - <?= $categ['nome'] ?>
                   </option>
                 <?php endforeach; ?>
       </select>
