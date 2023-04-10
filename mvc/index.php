@@ -17,11 +17,11 @@ $url = isset($_GET['url']) ? $_GET['url'] : 'index/index';
   $acao = $parametros[1];
   $controlador = new $nomeControlador();
 
-  if (count($parametros) == 2) {
-    $controlador->$acao();
+  if (count($parametros) == 2) {    
+    $controlador-> $acao();
   } else {
     $id = $parametros[2];
-    $controlador->$acao($id);
+    $controlador-> $acao($id);
   }
 
  ?>

@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,9 +9,10 @@
   <title>HamsterShop</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/navbar-fixed/">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <link rel="stylesheet"  type="text/css"  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> 
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">     
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">    
 </head>
 <body>  
 
@@ -45,25 +45,43 @@
           height=120px;
         />
       </a>
-      <!-- Left links -->
+      <!-- Left links -->     
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="<?php echo APP; ?>">Home</a>
-        </li>
+        </li> -->
         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Lista de Produtos
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Roedores
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+          
+          <?php               
+            $roedor = new Roedor();
+            $roedores = $roedor-> read();               
+            $listarProdutos = APP . 'produto/listarprodutos';
+            foreach ($roedores as $roedor) :              
+            echo ("<li><a class='dropdown-item' href=" .($listarProdutos . "?especie=" . strtolower($roedor['especie'])) . ">"   . ucfirst(strtolower($roedor['especie'])) . "</a></li>");              
+            endforeach;           
+          ?>               
+          </ul>
+        </li>
       </li>
         <li class="nav-item">
-          <a class="nav-link" href="">Roedores</a>
+          <a class="nav-link" href="<?php echo APP. 'index/index'?>">Produtos</a>
         </li>
+        <?php 
+         $cadRoedor = APP . 'roedor/cadastrar';
+         $cadCategoria = APP . 'categoria/cadastrar';
+         $cadProduto = APP . 'produto/cadastrar';
+         $cadEstoque = APP . 'estoque/cadastrar';
+         $estoque = APP . 'estoque/listar';
+         echo (isset($_SESSION['logado']) && ($_SESSION['flg_admin'] == true) ? "<li class='nav-item'> <a class='nav-link' href='$cadRoedor'>Cadastar Roedor</a> </li>" : "");
+        echo (isset($_SESSION['logado']) && ($_SESSION['flg_admin'] == true) ? "<li class='nav-item'> <a class='nav-link' href='$cadCategoria'>Cadastar Categoria</a> </li>" : "");
+        echo (isset($_SESSION['logado']) && ($_SESSION['flg_admin'] == true) ? "<li class='nav-item'> <a class='nav-link' href='$cadProduto'>Cadastar Produto</a> </li>" : "");
+        echo (isset($_SESSION['logado']) && ($_SESSION['flg_admin'] == true) ? "<li class='nav-item'> <a class='nav-link' href='$cadEstoque'>Cadastar Estoque</a> </li>" : "");
+        echo (isset($_SESSION['logado']) && ($_SESSION['flg_admin'] == true) ? "<li class='nav-item'> <a class='nav-link' href='$estoque'>Estoque</a> </li>" : "");
+        ?>
       </ul>
       <!-- Left links -->
     </div>
@@ -96,10 +114,5 @@
     </div>
   </main>
   </body>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
-    integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
   </html>

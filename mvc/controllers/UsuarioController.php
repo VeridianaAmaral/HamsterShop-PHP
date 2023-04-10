@@ -36,7 +36,7 @@ class UsuarioController extends Controller{
         $user['email'] = $_POST['email'];
         $user['senha'] = base64_encode($_POST['senha']);
         $user['telefone'] = $_POST['telefone'];
-        $user['tipo'] = $_POST['tipo'];
+        $user['flg_admin'] = $_POST['flg_admin'];
 
         $usuario = new Usuario();
         $usuario->create($user);

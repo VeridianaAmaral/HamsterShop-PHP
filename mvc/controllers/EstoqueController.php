@@ -17,13 +17,12 @@
         
         $estoques = new Estoque();
         $estoques->create($estoque);
-        $this->redirect('estoque/listar');
+        $this->redirect('estoque/cadastrar');
 
     }
 
     function listar(){
-
-         if (!$_SESSION['tipo']) {
+         if (!$_SESSION['flg_admin']) {
             $this->redirect('index/index');
         }
 

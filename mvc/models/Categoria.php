@@ -2,7 +2,7 @@
 
 class Categoria extends Model{
 
-protected $tabela = "categoria_produto";
+protected $tabela = "categoria";
 protected $query = "";
 
 

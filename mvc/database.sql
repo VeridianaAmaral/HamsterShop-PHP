@@ -1,28 +1,29 @@
 CREATE table usuario(
  	id bigserial not null primary key,
-	tipo boolean not null,
+	flg_admin boolean not null,
 	nome varchar(100) not null,
-	email VARCHAR(100) not null,
+	email VARCHAR(100) unique not null,
 	senha varchar(50) not null,
-	telefone int not null
+	telefone varchar(50) not null
 );
 
 create table roedor(
 	id bigserial not null primary key,
 	especie varchar(50) not null
 );
-create table categoria_produto(
+
+create table categoria(
 	id bigserial not null primary key,
 	nome varchar(50) not null
 );
 
 create table produto(
 	id bigserial not null primary key,
-	tipo int not null,
-	descricao varchar(100) not null, //trasformar emUnique
+	categoria_id bigint not null,
+	descricao varchar(100) not null,
 	preco numeric(10,2) not null,
 	roedor_id int references roedor(id),
-	FOREIGN key (tipo)REFERENCES categoria_produto(id)
+	FOREIGN key (categoria_id) REFERENCES categoria(id)
 );
 
 create table estoque(
@@ -38,8 +39,6 @@ create table ordem_compra(
 	produto_id int references produto(id)
 );
 
-select * from estoque
-
-select prod.descricao as nomeProduto, prod.preco as preco, categ.nome as nomeCateg
-from  produto prod join categoria_produto categ
-    on categ.id = prod.tipo
+insert into roedor (especie) values ('coelho');
+insert into roedor (especie) values ('hamster');
+insert into roedor (especie) values ('rato');
