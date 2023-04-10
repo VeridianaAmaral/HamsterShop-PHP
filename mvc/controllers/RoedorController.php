@@ -13,8 +13,8 @@
         
         $roedores = new Roedor();
         $roedores->create($roedor);
-        $this->redirect('roedor/listar');
-    }  
+        $this->redirect('roedor/cadastrar');
+    }   
 }
 
 ?>

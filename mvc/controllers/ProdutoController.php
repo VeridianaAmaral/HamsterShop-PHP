@@ -15,13 +15,13 @@
     function salvar(){
         $produto = array();
         $produto['roedor_id'] = $_POST['roedor_id'];
-        $produto['flg_admin'] = $_POST['flg_admin'];
+        $produto['categoria_id'] = $_POST['categoria_id'];
         $produto['descricao'] = $_POST['descricao'];
         $produto['preco'] = $_POST['preco'];
         
         $produtos = new Produto();
         $produtos-> create($produto);
-        $this->redirect('produto/listar');
+        $this->redirect('produto/cadastrar');
     }
 
     function listarProdutos() {

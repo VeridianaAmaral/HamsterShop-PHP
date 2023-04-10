@@ -13,7 +13,7 @@
         
         $categ = new Categoria();
         $categ->create($categoria);
-        $this->redirect('categoria/listar');
+        $this->redirect('categoria/cadastrar');
 
     }
 

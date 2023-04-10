@@ -17,7 +17,7 @@
         
         $estoques = new Estoque();
         $estoques->create($estoque);
-        $this->redirect('estoque/listar');
+        $this->redirect('estoque/cadastrar');
 
     }
 
