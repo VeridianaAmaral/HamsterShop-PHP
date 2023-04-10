@@ -70,6 +70,9 @@
         <li class="nav-item">
           <a class="nav-link" href="">Produtos</a>
         </li>
+        <?php 
+        echo (isset($_SESSION['logado']) && ($_SESSION['flg_admin'] == true) ? "<li class='nav-item'> <a class='nav-link' href=''>Cadastrar produtos</a> </li>" : "");
+        ?>
       </ul>
       <!-- Left links -->
     </div>

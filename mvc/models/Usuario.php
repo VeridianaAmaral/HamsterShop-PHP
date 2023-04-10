@@ -26,7 +26,7 @@
             else {
               $_SESSION['username'] = "";
               $_SESSION['id'] = "";      
-              $_SESSION['message'] = " Invalid Username or Password";                
+              $_SESSION['message'] = " Invalid Username or Password";                              
             }
           }
 
