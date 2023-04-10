@@ -68,10 +68,19 @@
         </li>
       </li>
         <li class="nav-item">
-          <a class="nav-link" href="">Produtos</a>
+          <a class="nav-link" href="<?php echo APP. 'index/index'?>">Produtos</a>
         </li>
         <?php 
-        echo (isset($_SESSION['logado']) && ($_SESSION['flg_admin'] == true) ? "<li class='nav-item'> <a class='nav-link' href=''>Cadastrar produtos</a> </li>" : "");
+         $cadRoedor = APP . 'roedor/cadastrar';
+         $cadCategoria = APP . 'categoria/cadastrar';
+         $cadProduto = APP . 'produto/cadastrar';
+         $cadEstoque = APP . 'estoque/cadastrar';
+         $estoque = APP . 'estoque/listar';
+         echo (isset($_SESSION['logado']) && ($_SESSION['flg_admin'] == true) ? "<li class='nav-item'> <a class='nav-link' href='$cadRoedor'>Cadastar Roedor</a> </li>" : "");
+        echo (isset($_SESSION['logado']) && ($_SESSION['flg_admin'] == true) ? "<li class='nav-item'> <a class='nav-link' href='$cadCategoria'>Cadastar Categoria</a> </li>" : "");
+        echo (isset($_SESSION['logado']) && ($_SESSION['flg_admin'] == true) ? "<li class='nav-item'> <a class='nav-link' href='$cadProduto'>Cadastar Produto</a> </li>" : "");
+        echo (isset($_SESSION['logado']) && ($_SESSION['flg_admin'] == true) ? "<li class='nav-item'> <a class='nav-link' href='$cadEstoque'>Cadastar Estoque</a> </li>" : "");
+        echo (isset($_SESSION['logado']) && ($_SESSION['flg_admin'] == true) ? "<li class='nav-item'> <a class='nav-link' href='$estoque'>Estoque</a> </li>" : "");
         ?>
       </ul>
       <!-- Left links -->
