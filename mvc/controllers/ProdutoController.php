@@ -27,7 +27,8 @@
     function listarProdutos() {        
         $especie = $_GET['especie'];              
         $produto = new Produto();   
-        $produtos = $produto -> findBySpecie($especie);        
+        $produtos = $produto-> findBySpecie($especie); 
+        
         $this -> view('produto', compact('produtos'));
     }
 }

@@ -1,3 +1,8 @@
+<?php
+    if (!isset($produtos)) {
+    
+?>
+
 <form action = "<?php echo APP . 'produto/salvar'?>" method = "POST">
   <div class="form-row">
     <div class="form-group col-md-6">
@@ -30,3 +35,30 @@
   </div>
   <button type="submit" class="btn btn-primary">Adicionar</button>
 </form>
+
+
+<?php
+      }else{
+        foreach ($produtos as $prod) {   
+
+        
+          echo "
+          <div class='col-sm-2 d-flex align-items-stretch' style='margin-top: 2rem;'>
+          <div class='card corzinha'>
+          <div class='card-header' style='text-align: center;'>
+          <h5 class='card-title'>#{$prod['nomeproduto']}</h5>
+          </div>
+          <div class='card-body' style='text-align: center'>          
+          <h5>Preco: {$prod['preco']}</h5>
+          <h5>Categoria: {$prod['nomecateg']}</h5>          
+          </div>
+          </div>
+          </div>           
+          ";
+  
+
+
+        }
+      }
+
+?>

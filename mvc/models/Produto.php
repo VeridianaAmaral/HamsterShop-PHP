@@ -10,16 +10,16 @@ from  produto prod join categoria categ
     public function findBySpecie($value) {
         $query = "select prod.descricao as nomeProduto, prod.preco as preco, cat.nome as nomeCateg
             from produto prod 
-            join categoria cat on cat.id = prod.categoria_id            
-            join roedor roe on roe.id = prod.roedor_id            
-            ";
-
-        $sql = "$query WHERE roe.especie = :especie";
-        $sentenca = $this->conexao->prepare($sql);
+            inner join categoria cat on cat.id = prod.categoria_id            
+            inner join roedor roe on roe.id = prod.roedor_id         
+            WHERE roe.especie = :especie";
+        
+        $sentenca = $this->conexao->prepare($query);
+        $sentenca->setFetchMode(PDO::FETCH_UNIQUE);
         $sentenca->bindValue(":especie", $value);
         $sentenca->execute();
-        $dados = $sentenca->fetch();
+        $dados = $sentenca->fetchAll();        
         return $dados;
     }
-}
+} 
 ?>
