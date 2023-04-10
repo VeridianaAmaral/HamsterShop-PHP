@@ -15,7 +15,7 @@
     function salvar(){
         $produto = array();
         $produto['roedor_id'] = $_POST['roedor_id'];
-        $produto['flg_admin'] = $_POST['flg_admin'];
+        $produto['categoria_id'] = $_POST['categoria_id'];
         $produto['descricao'] = $_POST['descricao'];
         $produto['preco'] = $_POST['preco'];
         
@@ -24,12 +24,11 @@
         $this->redirect('produto/listar');
     }
 
-    function listarProdutos() {
-        $param1 = $_GET['especie'];
-        var_dump($param1);
-        // $this -> view('template', $roedores);
+    function listarProdutos() {        
+        $especie = $_GET['especie'];              
+        $produto = new Produto();   
+        $produtos = $produto -> findBySpecie($especie);        
+        $this -> view('produto', compact('produtos'));
     }
-
 }
-
 ?>

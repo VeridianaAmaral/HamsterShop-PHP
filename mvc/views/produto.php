@@ -2,7 +2,7 @@
   <div class="form-row">
     <div class="form-group col-md-6">
     <div class="form-group col-md-4">
-      <label for="inputState">State</label>
+      <label for="inputState">Tipo de roedor</label>
       <select name = "roedor_id" id="inputState" class="form-control">
       <?php foreach ($roedores as $roedor): ?>
                   <option name="roedor_id" value='<?= $roedor['id'] ?>'><?= $roedor['id'] ?> - <?= $roedor['especie'] ?>
@@ -11,10 +11,10 @@
       </select>
     </div>
     <div class="form-group col-md-4">
-      <label for="inputState">State</label>
-      <select name = "tipo" id="inputState" class="form-control">
-      <?php foreach ($categorias as $categ): ?>
-                  <option name= "tipo" value='<?= $categ['id'] ?>'><?= $categ['id'] ?> - <?= $categ['nome'] ?>
+      <label for="inputState">Categoria</label>
+      <select name = "categoria_id" id="inputState" class="form-control">
+      <?php foreach ($categorias as $categoria): ?>
+                  <option name= "categoria_id" value='<?= $categoria['id'] ?>'><?= $categoria['id'] ?> - <?= $categoria['nome'] ?>
                   </option>
                 <?php endforeach; ?>
       </select>
