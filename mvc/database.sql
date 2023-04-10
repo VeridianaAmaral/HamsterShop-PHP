@@ -42,3 +42,19 @@ create table ordem_compra(
 insert into roedor (especie) values ('coelho');
 insert into roedor (especie) values ('hamster');
 insert into roedor (especie) values ('rato');
+
+INSERT INTO categoria(nome) VALUES ('Ração');
+INSERT INTO categoria(nome) VALUES ('Acessórios');
+INSERT INTO categoria(nome) VALUES ('Serragem');
+
+INSERT INTO produto(
+categoria_id, descricao, preco, roedor_id)
+VALUES (1, 'Ração de cueio', 32, 1);
+	
+INSERT INTO produto(
+categoria_id, descricao, preco, roedor_id)
+VALUES (2, 'Acessório de Hamerti', 15, 2);
+	
+INSERT INTO produto(
+categoria_id, descricao, preco, roedor_id)
+VALUES (3, 'Acessório de Hamerti', 5,3);
