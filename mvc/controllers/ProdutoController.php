@@ -21,7 +21,7 @@
         
         $produtos = new Produto();
         $produtos-> create($produto);
-        $this->redirect('produto/listar');
+        $this->redirect('produto/cadastrar');
     }
 
     function listarProdutos() {        
