@@ -1,9 +1,13 @@
-<form action = "<?php echo APP . 'roedor/salvar'?>" method = "POST">
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEspecie4">Especie</label>
-      <input type="especie" class="form-control" id="inputEspecie4" placeholder="Especie" name = "especie">
+<form action="<?php echo APP . 'roedor/salvar'?>" method="POST">
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <label for="inputEspecie" class="form-label">Espécie</label>
+      <input type="text" class="form-control" id="inputEspecie" placeholder="Digite a espécie do roedor" name="especie">
     </div>
   </div>
-  <button type="submit" class="btn btn-primary">Adicionar</button>
+  <div class="row">
+    <div class="col-md-6">
+      <button type="submit" class="btn btn-primary">Adicionar</button>
+    </div>
+  </div>
 </form>

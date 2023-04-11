@@ -15,6 +15,9 @@ Clone ou baixe o repositório para sua máquina
 Configure as informações de acesso ao banco de dados no arquivo system/Model.php
 Importe o arquivo database.sql para criar a estrutura do banco de dados
 Acesse a URL correspondente no navegador para iniciar a aplicação
+Realize o login com o usuário padrão
+login: admin@admin.com
+password: admin
 ## Tecnologias utilizadas
 * PHP
 * HTML
