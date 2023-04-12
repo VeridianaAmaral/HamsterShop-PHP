@@ -7,9 +7,15 @@
   error_reporting(E_ALL);
   define("APP", "http://localhost/mvc/");
 
-  $rotasPermitidas = array('usuario/login', 'usuario/entrar', 'usuario/cadastrar', 'usuario/salvar');
+$rotasProibidas = array('roedor/cadastrar', '/categoria/cadastrar', 'produto/cadastrar', 'estoque/cadastrar', 'estoque/listar');
 
-$url = isset($_GET['url']) ? $_GET['url'] : 'index/index';
+if (isset($_GET['url']) && in_array($_GET['url'], $rotasProibidas) && (!isset($_SESSION['flg_admin']) || !$_SESSION['flg_admin'])) {
+  $url = 'index/index';
+} else if (isset($_GET['url'])){
+  $url = $_GET['url'];
+} else {
+  $url = 'index/index';
+}
 
   $parametros = explode("/", $url);
   $nomeControlador = ucfirst($parametros[0]).'Controller';
