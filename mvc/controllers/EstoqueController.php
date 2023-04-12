@@ -11,12 +11,20 @@
         }
 
     function salvar(){
+        $estoques = new Estoque();
+
         $estoque = array();
         $estoque['produto_id'] = $_POST['produto_id'];
-        $estoque['quantidade'] = $_POST['quantidade'];
+        $estoque['quantidade'] = $_POST['quantidade'];                
         
-        $estoques = new Estoque();
-        $estoques->create($estoque);
+        $response = $estoques-> estoqueByProdutoId($_POST['produto_id']);        
+               
+        if(empty($response)) {
+            $estoques->create($estoque);           
+        } else {                        
+         $estoque['id'] = $response[0]['id'];
+         $estoques-> update($estoque);
+        }        
         $this->redirect('estoque/cadastrar');
 
     }
@@ -38,7 +46,7 @@
         $this -> redirect('estoque/listar');
     }
 
-    public function delete($id) {
+    function delete($id) {
       $sql = "DELETE FROM $this->tabela WHERE id = :id";
       $sentenca = $this->conexao->prepare($sql);
       $sentenca->bindParam(":id", $id);
@@ -63,6 +71,5 @@
         $this -> view('editarestoque', compact('est'));
     }
 
-}
-
+    }
 ?>

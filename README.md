@@ -13,7 +13,7 @@ Este é um projeto PHP para uma loja virtual de hamster, desenvolvido como exemp
 ## Instalação
 Clone ou baixe o repositório para sua máquina
 Configure as informações de acesso ao banco de dados no arquivo system/Model.php
-Importe o arquivo database.sql para criar a estrutura do banco de dados
+Importe o arquivo backup.sql para criar a estrutura do banco de dados
 Acesse a URL correspondente no navegador para iniciar a aplicação
 Realize o login com o usuário padrão
 login: admin@admin.com

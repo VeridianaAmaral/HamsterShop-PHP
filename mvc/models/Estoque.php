@@ -9,6 +9,18 @@ from estoque es join produto prod
     on categ.id = prod.categoria_id    
 ";
 
+
+function estoqueByProdutoId($produto_id) {
+    $query = "SELECT estoque.id FROM estoque WHERE produto_id = :produto_id LIMIT 1";
+        
+    $sentenca = $this->conexao->prepare($query);
+    $sentenca->setFetchMode(PDO::FETCH_ASSOC);
+    $sentenca->bindValue(":produto_id", $produto_id);
+    $sentenca->execute();
+    $dados = $sentenca->fetchAll();     
+    return $dados;
+   
+}
 }
 
 ?>
