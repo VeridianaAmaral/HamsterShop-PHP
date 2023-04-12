@@ -24,12 +24,12 @@
         $this->redirect('produto/cadastrar');
     }
 
-    function listarProdutos() {
-        $param1 = $_GET['especie'];
-        var_dump($param1);
-        // $this -> view('template', $roedores);
+    function listarProdutos() {        
+        $especie = $_GET['especie'];              
+        $produto = new Produto();   
+        $produtos = $produto-> findBySpecie($especie); 
+        
+        $this -> view('produto', compact('produtos'));
     }
-
 }
-
 ?>

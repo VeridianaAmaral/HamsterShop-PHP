@@ -1,8 +1,8 @@
-<form action = "<?php echo APP . 'categoria/salvar'?>" method = "POST">
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Categoria</label>
-      <input type="categoria" class="form-control" id="inputCategoria4" placeholder="Categoria" name = "nome">
+<form action="<?php echo APP . 'categoria/salvar'?>" method="POST">
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <label for="inputCategoria" class="form-label">Categoria</label>
+      <input type="text" class="form-control" id="inputCategoria" name="nome" placeholder="Categoria">
     </div>
   </div>
   <button type="submit" class="btn btn-primary">Adicionar</button>

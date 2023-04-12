@@ -6,7 +6,7 @@
       $prod = new Produto();
       $produtos = $prod->read(); 
         
-      $this-> view('index2', compact('produtos'));
+      $this-> view('produto', compact('produtos'));
     }
    
   }
