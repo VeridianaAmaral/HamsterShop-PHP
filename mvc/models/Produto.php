@@ -12,7 +12,7 @@ from produto prod
      
 
     public function findBySpecie($value) {
-        $query = "select prod.descricao as titulo, prod.preco as preco, cat.nome as categoria, estq.quantidade as estoque
+        $query = "select prod.id as id, prod.descricao as titulo, prod.preco as preco, cat.nome as categoria, estq.quantidade as estoque
             from produto prod 
             inner join categoria cat on cat.id = prod.categoria_id            
             inner join roedor roe on roe.id = prod.roedor_id         

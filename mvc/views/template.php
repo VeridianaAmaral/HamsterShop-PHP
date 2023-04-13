@@ -91,7 +91,15 @@
     <div class="d-flex align-items-center">
       <!-- Icon -->
       <a class="text-reset me-3" href="#">
-        <i class="bi bi-file-earmark-code-fill"></i>
+        <?php
+
+          if (isset($_SESSION['cart'])) {
+            $count = (count(explode(',', $_SESSION['cart'])));
+            echo "<i class='bi bi-cart badge rounded-pill bg-danger' style='font-size: 30px'>$count</i>";
+          } else {
+            echo "<i class='bi bi-cart badge rounded-pill bg-danger' style='font-size: 30px'> </i>";
+          }
+        ?>        
       </a>
       <?php       
             $pathDeslogar = APP . 'usuario/deslogar';
@@ -114,5 +122,14 @@
     </div>
   </main>
   </body>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>   
+  <style>
+  .button-color {
+  background-color: #F3EBFC;
+  }
+  .button-color:hover {
+  background-color: plum;
+  }
+  
+  </style>
   </html>

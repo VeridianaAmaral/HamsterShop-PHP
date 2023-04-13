@@ -31,5 +31,15 @@
         
         $this -> view('produto', compact('produtos'));
     }
+
+    function addCar($id) {
+        if(!isset($_SESSION['cart'])){
+        $_SESSION['cart'] = "";
+        }
+        
+        $_SESSION['cart'] = "{$_SESSION['cart']}" . "{$id},";
+        $returnePath = str_replace(APP, '', $_SERVER['HTTP_REFERER']);        
+        $this -> redirect($returnePath);
+    }
 }
 ?>

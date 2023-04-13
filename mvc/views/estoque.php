@@ -7,7 +7,7 @@
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputState">Produto</label>
-      <select name="produto_id" id="inputState" class="form-control">
+      <select name="produto_id" id="inputState" class="form-control button-color">
         <?php foreach ($produtos as $prod): ?>
           <option value="<?= $prod['id'] ?>"><?= $prod['id'] ?> - <?= $prod['titulo'] ?></option>
         <?php endforeach; ?>
@@ -15,7 +15,7 @@
     </div>
     <div class="form-group col-md-6">
       <label for="inputQuantidade4">Quantidade</label>
-      <input type="number" class="form-control" id="inputQuantidade4" placeholder="Quantidade" name="quantidade">
+      <input type="number" class="form-control button-color" id="inputQuantidade4" placeholder="Quantidade" name="quantidade">
     </div>
   </div>
   <button type="submit" class="btn btn-primary mt-3">Adicionar</button>
