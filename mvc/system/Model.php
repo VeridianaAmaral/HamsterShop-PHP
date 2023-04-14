@@ -50,7 +50,7 @@
             $campos .= "$chave= :$chave";
           }
         }
-      }
+      } 
       $sql = "UPDATE $this->tabela SET $campos WHERE id=:id ";
       $sentenca = $this->conexao->prepare($sql);
       foreach ($chaves as $chave) {

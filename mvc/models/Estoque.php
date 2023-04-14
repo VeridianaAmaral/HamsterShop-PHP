@@ -10,13 +10,13 @@ from estoque es join produto prod
 ";
 
 function estoqueByProdutoId($produto_id) {
-    $query = "SELECT estoque.id FROM estoque WHERE produto_id = :produto_id LIMIT 1";
+    $query = "SELECT id as estoque_id, quantidade as qttProduto, produto_id as prod_id FROM estoque WHERE produto_id = :produto_id LIMIT 1";
         
-    $sentenca = $this->conexao->prepare($query);
+    $sentenca = $this->conexao->prepare($query);    
     $sentenca->setFetchMode(PDO::FETCH_ASSOC);
     $sentenca->bindValue(":produto_id", $produto_id);
     $sentenca->execute();
-    $dados = $sentenca->fetchAll();     
+    $dados = $sentenca->fetch();     
     return $dados;
    
 }

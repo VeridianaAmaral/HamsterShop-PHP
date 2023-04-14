@@ -20,7 +20,7 @@ from produto prod
             WHERE lower(roe.especie) LIKE LOWER(:especie)";
         
         $sentenca = $this->conexao->prepare($query);
-        $sentenca->setFetchMode(PDO::FETCH_UNIQUE);
+        $sentenca->setFetchMode(PDO::FETCH_ASSOC);        
         $sentenca->bindValue(":especie", $value);
         $sentenca->execute();
         $dados = $sentenca->fetchAll();        

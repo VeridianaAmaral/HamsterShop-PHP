@@ -42,17 +42,22 @@
 <?php
       } else{        
         $CarrinhoPath = APP . 'produto/addCar';
-
+        
+        
+        
         echo " <div class='row'>";
         foreach ($produtos as $prod) {   
+          $quantidade = isset($prod['estoque']) ? $prod['estoque'] : "0";          
+
           echo "          
           <div class='col-sm-6'>
             <div class='card'>
               <div class='card-body'>
-                <h5 class='card-title'> {$prod['titulo']} </h5>
+                <h5 class='card-title'> {$prod['titulo']} </h5>                
                 <p class='card-text'>Preco: {$prod['preco']}</p>
+                <p class='card-text'>Quantidade: {$quantidade}</p>
                 <p class='card-text'>Categoria: {$prod['categoria']}</p>
-                " . (!isset($prod['estoque']) && ($prod['estoque'] == 0 || $prod['estoque'] == null || $prod['estoque'] == false) ? "<a href='' class='btn btn-danger disabled'>Indisponível</a>" : "<a  href='$CarrinhoPath/{$prod['id']}' class='btn btn-primary '>Comprar</a>") . "
+                " . (!isset($prod['estoque']) || ($quantidade <= 0) ? "<a href='' class='btn btn-danger disabled'>Indisponível</a>" : "<a  href='$CarrinhoPath/{$prod['id']}' class='btn btn-primary '>Comprar</a>") . "
               </div>
             </div>    
             </div>          

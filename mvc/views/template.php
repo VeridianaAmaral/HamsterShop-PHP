@@ -94,7 +94,7 @@
         <?php
 
           if (isset($_SESSION['cart'])) {
-            $count = (count(explode(',', $_SESSION['cart'])));
+            $count = (count(explode(',', $_SESSION['cart']))-1);
             echo "<i class='bi bi-cart badge rounded-pill bg-danger' style='font-size: 30px'>$count</i>";
           } else {
             echo "<i class='bi bi-cart badge rounded-pill bg-danger' style='font-size: 30px'> </i>";

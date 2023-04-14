@@ -27,8 +27,7 @@
     function listarProdutos() {        
         $especie = $_GET['especie'];              
         $produto = new Produto();   
-        $produtos = $produto-> findBySpecie($especie); 
-        
+        $produtos = $produto-> findBySpecie($especie);        
         $this -> view('produto', compact('produtos'));
     }
 
@@ -39,6 +38,17 @@
         
         $_SESSION['cart'] = "{$_SESSION['cart']}" . "{$id},";
         $returnePath = str_replace(APP, '', $_SERVER['HTTP_REFERER']);        
+
+        $estoques = new Estoque();  
+        $estoque = $estoques -> estoqueByProdutoId($id);    
+        
+        var_dump($estoque);           
+        $dados['quantidade'] =  $estoque['qttproduto'] - 1;
+        $dados['id'] =  $estoque['estoque_id'];
+        $dados['produto_id'] =  $estoque['prod_id'];
+        
+        var_dump($dados);         
+        $estoques -> update($dados);         
         $this -> redirect($returnePath);
     }
 }
