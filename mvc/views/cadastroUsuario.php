@@ -1,21 +1,21 @@
 <form action = "<?php echo APP . 'usuario/salvar'?>" method = "POST">
   <div class="form-row">
-  <div class="form-group col-md-6">
+  <div class="form-group col-md-6 ">
       <label for="inputEmail4">Your name</label>
-      <input type="text" class="form-control" id="inputNome4" placeholder="Nome" name= "nome" style="background-color: #F3EBFC">
+      <input type="text"  class="form-control button-color" id="button-color" placeholder="Nome" name= "nome"  required>
     </div>
     <div class="form-group col-md-6">
       <label for="inputEmail4">E-mail</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name= "email" style="background-color: #F3EBFC">
+      <input type="email" class="form-control button-color" id="inputEmail4" placeholder="Email" name= "email"  required>
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Password</label>
-      <input type="password" class="form-control" id="inputPassword4" placeholder="Password" name="senha" style="background-color: #F3EBFC">
+      <input type="password" class="form-control button-color" id="inputPassword4" placeholder="Password" name="senha"  required>
     </div>
   </div>
   <div class="form-group">
     <label for="inputPhone">Celular</label>
-    <input type="text" class="form-control button-color" id="inputPhone" placeholder="xx xxxxxxxx" name= "telefone" style="background-color: #F3EBFC">
+    <input type="text" class="form-control button-color" id="inputPhone" placeholder="xx xxxxxxxx" name= "telefone"  required>
   </div>
   <fieldset class="form-group">
     <div class="row">
@@ -39,3 +39,5 @@
   </div>
   <button type="submit" class="btn btn-primary">Sign in</button>
 </form>
+
+

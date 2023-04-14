@@ -2,7 +2,7 @@
   <div class="row mb-3">
     <div class="col-md-6">
       <label for="inputEspecie" class="form-label">Espécie</label>
-      <input type="text" class="form-control" id="inputEspecie" placeholder="Digite a espécie do roedor" name="especie">
+      <input type="text" class="form-control button-color" id="inputEspecie" placeholder="Digite a espécie do roedor" name="especie">
     </div>
   </div>
   <div class="row">

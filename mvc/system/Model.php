@@ -9,7 +9,7 @@
       try {
         $opcoes = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
         $this->conexao = new PDO('pgsql:host=localhost;dbname=trabalho', "postgres", "postgres", $opcoes);
-      } catch (PDOException $e) {
+      } catch (PDOException $e) {   
         $this->conexao = null;
       }
     }

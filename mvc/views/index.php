@@ -1,3 +1,7 @@
 <?php       
-    echo "Seja bem vindo  $_SESSION[name]" ;
+    echo "
+    <div> Seja bem vindo  
+        <b> $_SESSION[name] </b>
+    </div>
+    ";
 ?>

@@ -9,7 +9,6 @@ from estoque es join produto prod
     on categ.id = prod.categoria_id    
 ";
 
-
 function estoqueByProdutoId($produto_id) {
     $query = "SELECT estoque.id FROM estoque WHERE produto_id = :produto_id LIMIT 1";
         
