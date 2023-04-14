@@ -9,7 +9,7 @@
       <input class='form-control button-color' type="password" name="senha" value="" style="background-color: #F3EBFC">          
     </div>
     
-      <?php echo (isset($_SESSION['message']) ? "<div class='col-md-3 mb-1 alert alert-danger'>] {$_SESSION['message']} </div>" : '') ?>    
+      <?php echo (isset($_SESSION['message']) ? "<div class='col-md-3 mb-1 alert alert-danger'> {$_SESSION['message']} </div>" : '') ?>    
 
     <button class="btn btn-success" type="submit" name="button" >Entrar</button>
     <a href="<?php echo APP . 'usuario/cadastrar'; ?>">Cadastrar</a>
